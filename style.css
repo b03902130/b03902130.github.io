@@ -17,6 +17,7 @@ h2 {
     font-size: 400%;
 }
 
+
 .col {
     float: left;
     padding: 3px;
@@ -24,6 +25,7 @@ h2 {
     align: center;
     margin: 30px;
     text-align: center;
+    font-size: 250%;
 }
 
 .col img {
