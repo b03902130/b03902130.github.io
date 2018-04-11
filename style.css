@@ -38,6 +38,9 @@ section {
 }
 
 @media screen and (max-width:400px) {
+    h1 {
+        font-size: 10%;
+    }
     .col {
         width: 100%;
     }
