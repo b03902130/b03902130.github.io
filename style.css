@@ -12,10 +12,8 @@ h1 {
 h2 {
     font-family: 'Mirza', cursive;
     padding-left: 2%;
-/*
-    border-top: 2%;
+    border-top: 2px;
     border-bottom: 2px;
-*/
     font-size: 400%;
 }
 
@@ -34,10 +32,6 @@ h2 {
 
 section {
     overflow: auto;
-}
-
-.col:hover+ {
-    box-shadow: 10px 10px 5px grey;
 }
 
 @media screen and (max-width:400px) {
