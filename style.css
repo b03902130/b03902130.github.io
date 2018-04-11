@@ -11,16 +11,16 @@ h1 {
 
 h2 {
     padding-left: 2%;
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .col {
     float: left;
-    padding: 2%;
-    width: 29%;
-/*    margin: 0px;*/
+    padding: 3px;
+    width: 25%;
+    align: center;
+    margin: 30px;
     text-align: center;
-    font-size: 30px;
 }
 
 .col img {
@@ -30,12 +30,10 @@ h2 {
 section {
     overflow: auto;
 }
-/*
 
 .col:hover+ {
     box-shadow: 10px 10px 5px grey;
 }
-*/
 
 @media screen and (max-width:400px) {
     [class*="col"] {
