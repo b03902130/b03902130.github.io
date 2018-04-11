@@ -6,15 +6,17 @@ html, body {
 h1 {
   font-family: 'IM Fell English SC', serif;
   text-align: center;
-  font-size: 50px;
+  font-size: 600%;
 }
 
 h2 {
     font-family: 'Mirza', cursive;
-    padding-left: 30px;
-    border-top: 2px;
+    padding-left: 2%;
+/*
+    border-top: 2%;
     border-bottom: 2px;
-    font-size: 50px;
+*/
+    font-size: 400%;
 }
 
 .col {
