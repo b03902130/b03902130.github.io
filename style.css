@@ -4,12 +4,14 @@ html, body {
 }
 
 h1 {
+  font-family: 'IM Fell English SC', serif;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 h2 {
-    padding-left: 50px;
+    font-family: 'Mirza', cursive;
+    padding-left: 30px;
     border-top: 2px;
     border-bottom: 2px;
     font-size: 50px;
