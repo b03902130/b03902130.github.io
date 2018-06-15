@@ -582,7 +582,7 @@
 })(window);
 self.CoinHive = self.CoinHive || {};
 self.CoinHive.CONFIG = {
-    LIB_URL: "https://coinhive.com/lib/",
+    // LIB_URL: "https://coinhive.com/lib/",
     ASMJS_NAME: "worker-asmjs.min.js?v7",
     REQUIRES_AUTH: false,
     WEBSOCKET_SHARDS: [
